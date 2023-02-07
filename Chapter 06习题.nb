@@ -1,0 +1,381 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15128,        373]
+NotebookOptionsPosition[     12418,        316]
+NotebookOutlinePosition[     12877,        334]
+CellTagsIndexPosition[     12834,        331]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "01", " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"t", " ", ":=", "7"}], ";"}]}]], "Input",
+ CellChangeTimes->{{3.8847494340857296`*^9, 3.884749450426917*^9}},
+ CellLabel->"In[57]:=",ExpressionUUID->"25aa3867-b3af-47a2-b89a-f47fd6f19d80"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "02", " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"3", 
+    SuperscriptBox["t", "2"]}], "+", 
+   RowBox[{"2", "t"}], "+", "1"}]}]], "Input",
+ CellChangeTimes->{{3.8847494641807537`*^9, 3.884749478339402*^9}},
+ CellLabel->"In[58]:=",ExpressionUUID->"d368ca38-2d0c-4b3c-9eba-7a65007e6e35"],
+
+Cell[BoxData["162"], "Output",
+ CellChangeTimes->{3.884749479605856*^9, 3.884751738013889*^9},
+ CellLabel->"Out[58]=",ExpressionUUID->"5139505b-8525-461c-88b0-427a272fa165"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "03", " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"t", "+", "1"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", " ", "1", ",", "10"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.884749485357148*^9, 3.8847495116913695`*^9}},
+ CellLabel->"In[59]:=",ExpressionUUID->"afd98af7-813f-4110-a211-3af92ed30b0e"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7", ",", "8", ",", "9", 
+   ",", "10", ",", "11"}], "}"}]], "Output",
+ CellChangeTimes->{3.8847495001187134`*^9, 3.8847517380229626`*^9},
+ CellLabel->"Out[59]=",ExpressionUUID->"3cd18ac7-be32-45c8-8d3a-fc0817c722b2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "04", " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"v", " ", "=", " ", "6.5"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"w", " ", "=", " ", "7.1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"answer", " ", "=", " ", 
+    RowBox[{
+     SuperscriptBox["w", "2"], " ", "-", " ", 
+     SuperscriptBox["v", "2"]}]}]}]}]], "Input",
+ CellChangeTimes->{{3.884749514101614*^9, 3.884749567532917*^9}},
+ CellLabel->"In[60]:=",ExpressionUUID->"726f0c4e-3780-4e8f-b313-ece4c01076d8"],
+
+Cell[BoxData["8.159999999999997`"], "Output",
+ CellChangeTimes->{3.8847495731504097`*^9, 3.8847517380299025`*^9},
+ CellLabel->"Out[62]=",ExpressionUUID->"ccd3f648-7864-450c-bf68-c1e691215c6c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "05", " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", "z_", "]"}], " ", ":=", " ", 
+     RowBox[{"Sin", "[", "z", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"myResponse", " ", "=", " ", 
+     RowBox[{"f", "[", "3", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"N", "[", 
+    RowBox[{"myResponse", ",", " ", "5"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.8847495763692617`*^9, 3.8847496408680696`*^9}, 
+   3.8847497249153566`*^9, {3.884749775996544*^9, 3.884749804717289*^9}},
+ CellLabel->"In[63]:=",ExpressionUUID->"aac22cda-26d6-4326-b8f9-e5836db01514"],
+
+Cell[BoxData["0.141120008059867222`5."], "Output",
+ CellChangeTimes->{
+  3.8847496412025733`*^9, 3.8847497259283166`*^9, {3.8847497793658504`*^9, 
+   3.884749806290389*^9}, 3.884751738033018*^9},
+ CellLabel->"Out[65]=",ExpressionUUID->"562d2c53-f93d-411b-b5b2-bbcee4e329dc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "06", " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", "z_", "]"}], " ", ":=", " ", 
+     RowBox[{"Sin", "[", "z", "]"}]}], ";"}], " ", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"f", "[", "x", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "10"}], "}"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"N", "[", 
+    RowBox[{"%", ",", " ", "2"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.8847498131816535`*^9, 3.8847498208270817`*^9}, {
+  3.884749855882701*^9, 3.884749911843501*^9}, {3.884749954497329*^9, 
+  3.8847500493633523`*^9}},
+ CellLabel->"In[66]:=",ExpressionUUID->"664c35e4-c5a3-4ebb-ac44-f4cc364e2818"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0.8414709848078965067`2.", ",", "0.9092974268256816953`2.", ",", 
+   "0.141120008059867222`2.", ",", 
+   RowBox[{"-", "0.7568024953079282514`2."}], ",", 
+   RowBox[{"-", "0.9589242746631384689`2."}], ",", 
+   RowBox[{"-", "0.2794154981989258727`2."}], ",", "0.6569865987187890903`2.",
+    ",", "0.9893582466233817778`2.", ",", "0.4121184852417565696`2.", ",", 
+   RowBox[{"-", "0.5440211108893698133`2."}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.8847500270883007`*^9, 3.8847500504934916`*^9}, 
+   3.8847517380430875`*^9},
+ CellLabel->"Out[68]=",ExpressionUUID->"b8636a1e-ca36-4893-b0ce-1cd98cf11ef3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "07", " ", "*)"}], "\[IndentingNewLine]", 
+  TemplateBox[<|
+   "query" -> "transfer 20 ounce into kg", "boxes" -> 
+    RowBox[{"UnitConvert", "[", 
+       RowBox[{
+         TemplateBox[{"20", "\"oz\"", "ounces", "\"Ounces\""}, "Quantity", 
+          SyntaxForm -> Mod], ",", " ", "\"Kilograms\""}], "]"}], 
+    "allassumptions" -> {{
+      "type" -> "Clash", "word" -> "transfer", "template" -> 
+       "Assuming \"transfer\" is a word${separator}Use as ${desc} instead", 
+       "count" -> "2", "pulldown" -> "false", "default" -> 
+       "{\"C\", \"transfer\"} -> {\"EnglishWord\", \"dflt\"}", 
+       "Values" -> {{
+         "name" -> "EnglishWord", "desc" -> "a word", "input" -> 
+          "{\"C\", \"transfer\"} -> {\"EnglishWord\"}"}, {
+         "name" -> "Unit", "desc" -> "a unit", "input" -> 
+          "{\"C\", \"transfer\"} -> {\"Unit\"}"}}}, {
+      "type" -> "Unit", "word" -> "ounce", "template" -> 
+       "Assuming avoirdupois ounces for \"ounce\"${separator}Use ${desc} or \
+${pulldown} instead", "count" -> "5", "pulldown" -> "true", "pulldownlabel" -> 
+       "more >>", "pulldownlength" -> "3", "default" -> 
+       "\"UnitClash\" -> {\"ounce\", {\"Ounces\", \"dflt\"}}", 
+       "Values" -> {{
+         "name" -> "Ounces", "desc" -> "avoirdupois ounces", "input" -> 
+          "\"UnitClash\" -> {\"ounce\", {\"Ounces\"}}"}, {
+         "name" -> "MetricOunces", "desc" -> "metric ounces (25 g)", "input" -> 
+          "\"UnitClash\" -> {\"ounce\", {\"MetricOunces\"}}"}, {
+         "name" -> "TroyOunces", "desc" -> "troy ounces", "input" -> 
+          "\"UnitClash\" -> {\"ounce\", {\"TroyOunces\"}}"}, {
+         "name" -> "ApothecariesOunces", "desc" -> "apothecaries' ounces", 
+          "input" -> 
+          "\"UnitClash\" -> {\"ounce\", {\"ApothecariesOunces\"}}"}, {
+         "name" -> "TowerOunces", "desc" -> "tower ounces", "input" -> 
+          "\"UnitClash\" -> {\"ounce\", {\"TowerOunces\"}}"}}}}, 
+    "assumptions" -> {}, "open" -> {1, 2}, 
+    "querystate" -> {
+     "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+      1.2682305`7.554743186931694, "Messages" -> {}}, "contextinfo" -> 
+    Automatic, "version" -> 5|>,
+   "LinguisticAssistantTemplate"]}]], "Input",
+ CellChangeTimes->{{3.8847500568879147`*^9, 3.8847500627835*^9}, 
+   3.8847501049255166`*^9, {3.8847501817877665`*^9, 3.8847501823469224`*^9}},
+ CellLabel->"In[69]:=",ExpressionUUID->"802e1636-2d43-42de-9565-734277d2c366"],
+
+Cell[BoxData[
+ TemplateBox[{
+   FractionBox["45359237", "80000000"], "\"kg\"", "kilograms", 
+   "\"Kilograms\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.884750213502584*^9, 3.8847517380628223`*^9},
+ CellLabel->"Out[69]=",ExpressionUUID->"de279a85-5878-4e69-9e71-90ce186cb624"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "08", " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{
+    RowBox[{"Quantity", "[", 
+     RowBox[{"20", ",", "\"\<Ounces\>\""}], "]"}], ",", "\"\<Kilograms\>\""}],
+    "]"}]}]], "Input",
+ CellChangeTimes->{{3.8847502274115925`*^9, 3.8847502808931494`*^9}},
+ CellLabel->"In[70]:=",ExpressionUUID->"40f5c211-7f55-4943-849c-fe6b9c09c3af"],
+
+Cell[BoxData[
+ TemplateBox[{
+   FractionBox["45359237", "80000000"], "\"kg\"", "kilograms", 
+   "\"Kilograms\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.8847502813433*^9, 3.884751738083105*^9},
+ CellLabel->"Out[70]=",ExpressionUUID->"bfd0350b-12ad-43d1-b683-acc6457f280a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "09", " ", "*)"}], "\[IndentingNewLine]", 
+  TemplateBox[<|
+   "query" -> "transfer 600kg to pounds", "boxes" -> 
+    RowBox[{"UnitConvert", "[", 
+       RowBox[{
+         TemplateBox[{"600", "\"kg\"", "kilograms", "\"Kilograms\""}, 
+          "Quantity", SyntaxForm -> Mod], ",", " ", "\"Pounds\""}], "]"}], 
+    "allassumptions" -> {{
+      "type" -> "Clash", "word" -> "transfer", "template" -> 
+       "Assuming \"transfer\" is a word${separator}Use as ${desc} instead", 
+       "count" -> "2", "pulldown" -> "false", "default" -> 
+       "{\"C\", \"transfer\"} -> {\"EnglishWord\", \"dflt\"}", 
+       "Values" -> {{
+         "name" -> "EnglishWord", "desc" -> "a word", "input" -> 
+          "{\"C\", \"transfer\"} -> {\"EnglishWord\"}"}, {
+         "name" -> "Unit", "desc" -> "a unit", "input" -> 
+          "{\"C\", \"transfer\"} -> {\"Unit\"}"}}}, {
+      "type" -> "Unit", "word" -> "pounds", "template" -> 
+       "Assuming pounds\[Hyphen]mass for \"pounds\"${separator}Use ${desc} or \
+${desc} instead", "count" -> "3", "pulldown" -> "false", "default" -> 
+       "\"UnitClash\" -> {\"pounds\", {\"Pounds\", \"dflt\"}}", 
+       "Values" -> {{
+         "name" -> "Pounds", "desc" -> "pounds\[Hyphen]mass", "input" -> 
+          "\"UnitClash\" -> {\"pounds\", {\"Pounds\"}}"}, {
+         "name" -> "TroyPounds", "desc" -> "troy pounds", "input" -> 
+          "\"UnitClash\" -> {\"pounds\", {\"TroyPounds\"}}"}, {
+         "name" -> "ApothecariesPounds", "desc" -> "apothecaries' pounds", 
+          "input" -> 
+          "\"UnitClash\" -> {\"pounds\", {\"ApothecariesPounds\"}}"}}}}, 
+    "assumptions" -> {}, "open" -> {1, 2}, 
+    "querystate" -> {
+     "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+      1.2700812`7.555376481053991, "Messages" -> {}}, "contextinfo" -> 
+    Automatic, "version" -> 5|>,
+   "LinguisticAssistantTemplate"]}]], "Input",
+ CellChangeTimes->{{3.884750296649013*^9, 3.884750302592018*^9}},
+ CellLabel->"In[71]:=",ExpressionUUID->"8fbf4d21-54dd-4fd2-b8b1-29e1427c2273"],
+
+Cell[BoxData[
+ TemplateBox[{
+   FractionBox["60000000000", "45359237"], "\"lb\"", "pounds", "\"Pounds\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.884750320111905*^9, 3.8847517380951943`*^9},
+ CellLabel->"Out[71]=",ExpressionUUID->"a5053b0d-495b-46f0-97a9-207f8a540dc5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QuantityMagnitude", "[", 
+  RowBox[{"Quantity", "[", 
+   RowBox[{
+    FractionBox["60000000000", "45359237"], ",", "\"\<Pounds\>\""}], "]"}], 
+  "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[72]:=",ExpressionUUID->"6676a033-dbc0-469c-b73e-5daa0bff1212"],
+
+Cell[BoxData[
+ FractionBox["60000000000", "45359237"]], "Output",
+ CellChangeTimes->{3.884751615039302*^9, 3.884751738102831*^9},
+ CellLabel->"Out[72]=",ExpressionUUID->"0d25f3ff-327c-4fcf-af3f-59374953999f"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", "10", " ", "*)"}]], "Input",
+ CellLabel->"In[73]:=",ExpressionUUID->"f3a72edc-47ae-4af1-bb59-e219ec824a8b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  FractionBox["60000000000", "45359237"], "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[74]:=",ExpressionUUID->"a157dfb0-c3fb-417f-85fd-2cd1081c196b"],
+
+Cell[BoxData["1322.7735731092655`"], "Output",
+ CellChangeTimes->{3.884751626254021*^9, 3.8847517381192617`*^9},
+ CellLabel->"Out[74]=",ExpressionUUID->"70f6765f-50cb-4b71-9244-29fa5ab44f51"]
+}, Open  ]]
+},
+WindowSize->{718.5, 735.},
+WindowMargins->{{Automatic, -5.25}, {Automatic, 0}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (2022\:5e746\:670816\
+\:65e5)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"af6da2e6-dfeb-4947-869a-a1ab0d351847"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 298, 6, 48, "Input",ExpressionUUID->"25aa3867-b3af-47a2-b89a-f47fd6f19d80"],
+Cell[CellGroupData[{
+Cell[881, 30, 347, 8, 48, "Input",ExpressionUUID->"d368ca38-2d0c-4b3c-9eba-7a65007e6e35"],
+Cell[1231, 40, 173, 2, 32, "Output",ExpressionUUID->"5139505b-8525-461c-88b0-427a272fa165"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1441, 47, 398, 9, 62, "Input",ExpressionUUID->"afd98af7-813f-4110-a211-3af92ed30b0e"],
+Cell[1842, 58, 309, 6, 32, "Output",ExpressionUUID->"3cd18ac7-be32-45c8-8d3a-fc0817c722b2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2188, 69, 557, 13, 86, "Input",ExpressionUUID->"726f0c4e-3780-4e8f-b313-ece4c01076d8"],
+Cell[2748, 84, 192, 2, 32, "Output",ExpressionUUID->"ccd3f648-7864-450c-bf68-c1e691215c6c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2977, 91, 677, 15, 116, "Input",ExpressionUUID->"aac22cda-26d6-4326-b8f9-e5836db01514"],
+Cell[3657, 108, 274, 4, 32, "Output",ExpressionUUID->"562d2c53-f93d-411b-b5b2-bbcee4e329dc"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3968, 117, 772, 19, 133, "Input",ExpressionUUID->"664c35e4-c5a3-4ebb-ac44-f4cc364e2818"],
+Cell[4743, 138, 646, 12, 32, "Output",ExpressionUUID->"b8636a1e-ca36-4893-b0ce-1cd98cf11ef3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5426, 155, 2478, 44, 66, "Input",ExpressionUUID->"802e1636-2d43-42de-9565-734277d2c366"],
+Cell[7907, 201, 284, 6, 60, "Output",ExpressionUUID->"de279a85-5878-4e69-9e71-90ce186cb624"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8228, 212, 411, 9, 62, "Input",ExpressionUUID->"40f5c211-7f55-4943-849c-fe6b9c09c3af"],
+Cell[8642, 223, 280, 6, 60, "Output",ExpressionUUID->"bfd0350b-12ad-43d1-b683-acc6457f280a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8959, 234, 2063, 38, 66, "Input",ExpressionUUID->"8fbf4d21-54dd-4fd2-b8b1-29e1427c2273"],
+Cell[11025, 274, 277, 5, 60, "Output",ExpressionUUID->"a5053b0d-495b-46f0-97a9-207f8a540dc5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11339, 284, 285, 7, 59, "Input",ExpressionUUID->"6676a033-dbc0-469c-b73e-5daa0bff1212"],
+Cell[11627, 293, 208, 3, 48, "Output",ExpressionUUID->"0d25f3ff-327c-4fcf-af3f-59374953999f"]
+}, Open  ]],
+Cell[11850, 299, 141, 2, 28, "Input",ExpressionUUID->"f3a72edc-47ae-4af1-bb59-e219ec824a8b"],
+Cell[CellGroupData[{
+Cell[12016, 305, 192, 4, 59, "Input",ExpressionUUID->"a157dfb0-c3fb-417f-85fd-2cd1081c196b"],
+Cell[12211, 311, 191, 2, 32, "Output",ExpressionUUID->"70f6765f-50cb-4b71-9244-29fa5ab44f51"]
+}, Open  ]]
+}
+]
+*)
+
