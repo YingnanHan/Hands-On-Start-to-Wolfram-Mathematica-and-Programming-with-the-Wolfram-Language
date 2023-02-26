@@ -1,0 +1,1961 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     77719,       1953]
+NotebookOptionsPosition[     74933,       1894]
+NotebookOutlinePosition[     75392,       1912]
+CellTagsIndexPosition[     75349,       1909]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "01", " ", "*)"}], "\[IndentingNewLine]", 
+  TemplateBox[<|
+   "query" -> "generate a random number between 1 and 10", "boxes" -> 
+    RowBox[{"RandomInteger", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1", ",", " ", "10"}], "}"}], ",", " ", "1"}], "]"}], 
+    "allassumptions" -> {{
+      "type" -> "Clash", "word" -> "generate a random", "template" -> 
+       "Assuming \"generate a random\" is referring to random \
+examples${separator}Use as ${desc} instead", "count" -> "2", "pulldown" -> 
+       "false", "default" -> 
+       "{\"C\", \"generate a random\"} -> {\"RandomWord\", \"dflt\"}", 
+       "Values" -> {{
+         "name" -> "RandomWord", "desc" -> " referring to random examples", 
+          "input" -> "{\"C\", \"generate a random\"} -> {\"RandomWord\"}"}, {
+         "name" -> "CommandWord", "desc" -> " referring to a computation", 
+          "input" -> 
+          "{\"C\", \"generate a random\"} -> {\"CommandWord\"}"}}}}, 
+    "assumptions" -> {}, "open" -> {1, 2}, 
+    "querystate" -> {
+     "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+      1.9689944`7.745789474462653, "Messages" -> {}}, "contextinfo" -> 
+    Automatic, "version" -> 5|>,
+   "LinguisticAssistantTemplate"]}]], "Input",
+ CellChangeTimes->{{3.8863646871548643`*^9, 3.8863646949477158`*^9}},
+ CellLabel->"In[60]:=",ExpressionUUID->"b41770c4-c06d-4862-a2e8-00da246683fe"],
+
+Cell[BoxData[
+ RowBox[{"{", "3", "}"}]], "Output",
+ CellChangeTimes->{3.886364720649333*^9},
+ CellLabel->"Out[60]=",ExpressionUUID->"5d70040a-3816-4dd2-a24d-795548787ef8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "02", " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"RandomInteger", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "100"}], "}"}], "]"}], ",", "5"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.88636472552536*^9, 3.8863647500642295`*^9}},
+ CellLabel->"In[62]:=",ExpressionUUID->"c3fd55f9-1f17-4602-bfe7-60694f72e010"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"73", ",", "49", ",", "30", ",", "99", ",", "66"}], "}"}]], "Output",
+ CellChangeTimes->{{3.8863647441078587`*^9, 3.8863647505002513`*^9}},
+ CellLabel->"Out[62]=",ExpressionUUID->"6e0315c6-5c06-441c-9b35-b28d12f02814"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "03", " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"out", " ", "=", " ", 
+     RowBox[{"Table", "[", 
+      RowBox[{"i", ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "1", ",", "10"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"RandomSample", "[", 
+    RowBox[{"out", ",", "10"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.886364752563822*^9, 3.886364798042328*^9}},
+ CellLabel->"In[63]:=",ExpressionUUID->"2c4b72e5-7530-4f7f-a0fa-3e1ca2d7978a"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "9", ",", "4", ",", "10", ",", "2", ",", "8", ",", "3", ",", "7", ",", "1", 
+   ",", "5", ",", "6"}], "}"}]], "Output",
+ CellChangeTimes->{3.8863647984001403`*^9},
+ CellLabel->"Out[64]=",ExpressionUUID->"c5a87bba-3172-41b8-8334-eff87429853d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "04", " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"tvSelect", "[", "x_", "]"}], ":=", 
+     RowBox[{
+      RowBox[{"QuantityMagnitude", "[", 
+       RowBox[{"CountryData", "[", 
+        RowBox[{"x", ",", "\"\<TelevisionStations\>\""}], "]"}], "]"}], ">=", 
+      "100"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"largeCountry", " ", "=", " ", 
+    RowBox[{"Select", "[", 
+     RowBox[{
+      RowBox[{"CountryData", "[", "All", "]"}], ",", "tvSelect"}], 
+     "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.8863648007941504`*^9, 3.8863648059620075`*^9}, {
+  3.886364839651387*^9, 3.8863648424370565`*^9}, {3.8863649804609995`*^9, 
+  3.8863651028916435`*^9}},
+ CellLabel->"In[65]:=",ExpressionUUID->"f2af7e5e-b7c7-447e-bf24-0e5fa32ae4ae"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"\"Australia\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Australia\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Australia\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Brazil\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Brazil\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Brazil\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Canada\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Canada\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Canada\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"China\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"China\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"China\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Denmark\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Denmark\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Denmark\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Finland\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Finland\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Finland\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"France\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"France\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"France\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Germany\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Germany\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Germany\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"India\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"India\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"India\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Italy\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Italy\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Italy\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Japan\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Japan\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Japan\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Mexico\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Mexico\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Mexico\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Netherlands\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Netherlands\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Netherlands\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Philippines\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Philippines\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Philippines\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Romania\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Romania\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Romania\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Russia\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Russia\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Russia\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Saudi Arabia\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"SaudiArabia\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"SaudiArabia\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"South Africa\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"SouthAfrica\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"SouthAfrica\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Spain\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Spain\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Spain\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Sweden\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Sweden\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Sweden\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Switzerland\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Switzerland\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Switzerland\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Thailand\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Thailand\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Thailand\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Turkey\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Turkey\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Turkey\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Ukraine\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Ukraine\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Ukraine\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"United Kingdom\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"UnitedKingdom\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"UnitedKingdom\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"United States\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"UnitedStates\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"UnitedStates\\\"]\"", "\"country\""},
+    "Entity"]}], "}"}]], "Output",
+ CellChangeTimes->{3.8863651036645474`*^9},
+ CellLabel->"Out[66]=",ExpressionUUID->"13f03016-e628-44d8-8db4-2b031fb11aa3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "05", " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"largeCountry", " ", "=", " ", 
+    RowBox[{"Select", "[", 
+     RowBox[{
+      RowBox[{"CountryData", "[", "All", "]"}], ",", "tvSelect"}], "]"}]}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.88636510703159*^9, 3.8863651401136928`*^9}, {
+  3.8863653246080217`*^9, 3.886365393338667*^9}},
+ CellLabel->"In[71]:=",ExpressionUUID->"0ed86841-4c90-4c2d-b853-6e281eb4e99c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"\"Australia\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Australia\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Australia\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Brazil\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Brazil\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Brazil\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Canada\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Canada\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Canada\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"China\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"China\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"China\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Denmark\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Denmark\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Denmark\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Finland\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Finland\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Finland\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"France\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"France\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"France\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Germany\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Germany\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Germany\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"India\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"India\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"India\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Italy\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Italy\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Italy\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Japan\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Japan\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Japan\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Mexico\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Mexico\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Mexico\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Netherlands\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Netherlands\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Netherlands\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Philippines\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Philippines\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Philippines\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Romania\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Romania\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Romania\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Russia\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Russia\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Russia\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Saudi Arabia\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"SaudiArabia\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"SaudiArabia\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"South Africa\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"SouthAfrica\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"SouthAfrica\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Spain\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Spain\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Spain\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Sweden\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Sweden\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Sweden\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Switzerland\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Switzerland\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Switzerland\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Thailand\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Thailand\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Thailand\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Turkey\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Turkey\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Turkey\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Ukraine\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"Ukraine\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"Ukraine\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"United Kingdom\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"UnitedKingdom\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"UnitedKingdom\\\"]\"", "\"country\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"United States\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"Country\"", ",", "\"UnitedStates\""}], "]"}], 
+     "\"Entity[\\\"Country\\\", \\\"UnitedStates\\\"]\"", "\"country\""},
+    "Entity"]}], "}"}]], "Output",
+ CellChangeTimes->{3.886365140527459*^9, 3.8863653353110456`*^9, 
+  3.886365394701047*^9},
+ CellLabel->"Out[71]=",ExpressionUUID->"eb953e83-4718-4b9c-87e7-721a19f2ab09"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "06", " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"manyStationsGDPGovDebt", " ", "=", " ", 
+   RowBox[{"Table", "[", "\[IndentingNewLine]", "\t", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"CountryData", "[", 
+        RowBox[{"country", ",", "\"\<GDPPerCapita\>\""}], "]"}], ",", 
+       RowBox[{"CountryData", "[", 
+        RowBox[{"country", ",", "\"\<GovernmentDebt\>\""}], "]"}]}], "}"}], 
+     ",", "\[IndentingNewLine]", "\t", 
+     RowBox[{"{", 
+      RowBox[{"country", ",", "largeCountry"}], "}"}]}], 
+    "\[IndentingNewLine]", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.8863654115200157`*^9, 3.8863655710430593`*^9}},
+ CellLabel->"In[73]:=",ExpressionUUID->"6b2e63aa-0cf1-4ba0-9064-0f78715d3227"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"51812.1540373988`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "5.4230889810694617`*^11", 5.4230889810694617`*^11, Selectable -> 
+        False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"6796.84454227877`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "1.7333466065049797`*^12", 1.7333466065049797`*^12, Selectable -> 
+        False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"43258.176319834`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "1.4793912828869531`*^12", 1.4793912828869531`*^12, Selectable -> 
+        False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"10500.3956159637`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "5.785892404320294`*^12", 5.785892404320294*^12, Selectable -> False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"61063.3164304238`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "1.1723873552365588`*^11", 1.1723873552365588`*^11, Selectable -> 
+        False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"48773.2811691347`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "1.5632512525078342`*^11", 1.5632512525078342`*^11, Selectable -> 
+        False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"39030.3603713482`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "2.5059011927873354`*^12", 2.5059011927873354`*^12, Selectable -> 
+        False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"46208.4294717472`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "2.3473705134595713`*^12", 2.3473705134595713`*^12, Selectable -> 
+        False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"1900.70680971528`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "1.8878487378190334`*^12", 1.8878487378190334`*^12, Selectable -> 
+        False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"31676.2020987349`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "2.5792607190293926`*^12", 2.5792607190293926`*^12, Selectable -> 
+        False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"39538.8792654412`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "1.1563669837346645`*^13", 1.1563669837346645`*^13, Selectable -> 
+        False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"8346.70237883571`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "6.29289778437429`*^11", 6.29289778437429*^11, Selectable -> False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"52397.1167129558`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "4.699726189028964`*^11", 4.699726189028964*^11, Selectable -> False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"3298.8298514292`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "1.3106386598993329`*^11", 1.3106386598993329`*^11, Selectable -> 
+        False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"12896.0886211622`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "7.790391550894508`*^10", 7.790391550894508*^10, Selectable -> False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"10126.7217935297`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "2.4400090499598923`*^11", 2.4400090499598923`*^11, Selectable -> 
+        False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"20110.3161923744`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "1.1843683401845334`*^11", 1.1843683401845334`*^11, Selectable -> 
+        False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"5090.71502455292`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "1.8526368184242352`*^11", 1.8526368184242352`*^11, Selectable -> 
+        False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"27063.1939180299`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "1.2883484905651614`*^12", 1.2883484905651614`*^12, Selectable -> 
+        False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"52259.2973756664`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "2.207356499057916`*^11", 2.207356499057916*^11, Selectable -> False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"86601.5564126289`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "2.9447202009089136`*^11", 2.9447202009089136`*^11, Selectable -> 
+        False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"7189.04183501668`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "1.9121356684482523`*^11", 1.9121356684482523`*^11, Selectable -> 
+        False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"8538.16905982745`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "2.4309594245612787`*^11", 2.4309594245612787`*^11, Selectable -> 
+        False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"3726.92714937055`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "7.965515216230647`*^10", 7.965515216230647*^10, Selectable -> False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"40284.6384553276`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "2.3296735163938457`*^12", 2.3296735163938457`*^12, Selectable -> 
+        False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"63543.577788724`", 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       RowBox[{
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+         RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+       "US dollars per person year", 
+       FractionBox["\"USDollars\"", 
+        RowBox[{"\"People\"", " ", "\"Years\""}]]},
+      "QuantityPrefixUnit"], ",", 
+     TemplateBox[{
+       InterpretationBox[
+       "1.5399867596204`*^13", 1.5399867596204*^13, Selectable -> False], 
+       RowBox[{
+         FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+       "US dollars", "\"USDollars\""},
+      "QuantityPrefix"]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.8863655575197134`*^9, 3.8863655717263575`*^9}},
+ CellLabel->"Out[73]=",ExpressionUUID->"4bfe6c48-2f03-44cb-8fd1-9db98f079ba0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "07", " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"Dimensions", "[", "manyStationsGDPGovDebt", "]"}]}]], "Input",
+ CellChangeTimes->{{3.8863655931103*^9, 3.8863656015410423`*^9}},
+ CellLabel->"In[74]:=",ExpressionUUID->"62cdb138-9f3a-49b8-947d-0354cc5bf140"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"26", ",", "2"}], "}"}]], "Output",
+ CellChangeTimes->{3.886365601822958*^9},
+ CellLabel->"Out[74]=",ExpressionUUID->"3f6c95fe-e0d9-4576-bdb3-0fbe9bcb21af"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "08", " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"ListLogLogPlot", "[", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Tooltip", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"CountryData", "[", 
+          RowBox[{"i", ",", "\"\<GDPPerCapita\>\""}], "]"}], ",", 
+         RowBox[{"CountryData", "[", 
+          RowBox[{"i", ",", "\"\<GovernmentDebt\>\""}], "]"}]}], "}"}], ",", 
+       "i"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "largeCountry"}], "}"}]}], "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.886365607733243*^9, 3.8863657705915594`*^9}},
+ CellLabel->"In[78]:=",ExpressionUUID->"c4c3922b-5aa8-406c-a911-c47f85716e08"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], PointBox[CompressedData["
+1:eJwBsQFO/iFib1JlAgAAABoAAAACAAAAiPY0X/S1JUDo7KXX4wQ7QE07FFj/
+pSFA5Vw98FouPEAmNhbwkVklQIY2ioLMBTxAW0EvsrGEIkD/0d757WI9QC4i
+5LwRCiZAXliCXst8OUBDXIsaApclQFWkysFzxjlAGwfopekkJUBKX6gkt4w8
+QKwEbYpZeyVAuk0HMfx7PEDPauo+LjMeQMBIQKk2RDxAaZpLNAW6JEAYsfIk
+GpQ8QKJkk1SKKyVA+cVQGDIUPkBQpS6XKg8iQGO6obj4KjtAl/Fs5LO7JUAx
+xyafPeA6QLLy3p7gMyBAZmsN01SZOUBemjRz6u0iQPlwaXAoFDlAaWfhQyRy
+IkBePxqcbjg6QK2W8OZm0SNArEXgs2V/OUBkVl1FAhIhQL3FG4ju8TlAKYyw
+pW9pJEAm83DgZuI7QMxwcK5auiVA1PuqgMceOkDHqR8l97wmQP9/+iqQaDpA
+/t6taLjCIUBUQfItBvo5QMgWeU/HGiJAo4RDGHs3OkATXx6JWXIgQBTUYlbZ
+GTlAatsVghs1JUA4mS09DHo8QBHXWFJ0HiZAk2uli4ldPkDOzbAF
+      "]]}, {
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{10.855380034651958`, 27.019101598748335`}}]},
+       TemplateBox[{"\"Australia\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"Australia\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"Australia\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "Australia"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{8.824213745565112, 28.181075110417527`}}]},
+       TemplateBox[{"\"Brazil\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"Brazil\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"Brazil\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "Brazil"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{10.674941542350165`, 28.02265182375279}}]},
+       TemplateBox[{"\"Canada\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"Canada\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"Canada\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "Canada"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{9.259168213146657, 29.386443726443755`}}]},
+       TemplateBox[{"\"China\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"China\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"China\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "China"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{11.019666579101877`, 25.48747816736465}}]},
+       TemplateBox[{"\"Denmark\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"Denmark\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"Denmark\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "Denmark"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{10.79493792487313, 25.77520381161988}}]},
+       TemplateBox[{"\"Finland\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"Finland\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"Finland\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "Finland"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{10.572095093320561`, 28.549669543367862`}}]},
+       TemplateBox[{"\"France\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"France\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"France\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "France"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{10.740917516525165`, 28.48431688717185}}]},
+       TemplateBox[{"\"Germany\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"Germany\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"Germany\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "Germany"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{7.549981101091091, 28.26645906276167}}]},
+       TemplateBox[{"\"India\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"India\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"India\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "India"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{10.363320955494787`, 28.57852393078892}}]},
+       TemplateBox[{"\"Italy\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"Italy\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"Italy\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "Italy"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{10.585039751999208`, 30.078889388771106`}}]},
+       TemplateBox[{"\"Japan\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"Japan\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"Japan\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "Japan"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{9.029621815151273, 27.16785768459739}}]},
+       TemplateBox[{"\"Mexico\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"Mexico\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"Mexico\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "Mexico"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{10.866606844233315`, 26.87594027230006}}]},
+       TemplateBox[{"\"Netherlands\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"Netherlands\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"Netherlands\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "Netherlands"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{8.101323094096504, 25.598950567985774`}}]},
+       TemplateBox[{"\"Philippines\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"Philippines\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"Philippines\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "Philippines"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{9.464679336711182, 25.07874205183268}}]},
+       TemplateBox[{"\"Romania\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"Romania\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"Romania\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "Romania"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{9.222932931199198, 26.22043777123269}}]},
+       TemplateBox[{"\"Russia\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"Russia\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"Russia\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "Russia"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{9.908988205784533, 25.497645609144158`}}]},
+       TemplateBox[{"\"Saudi Arabia\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"SaudiArabia\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"SaudiArabia\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "SaudiArabia"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{8.535173576015218, 25.945045954494834`}}]},
+       TemplateBox[{"\"South Africa\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"SouthAfrica\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"SouthAfrica\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "SouthAfrica"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{10.205929925728997`, 27.88438227422298}}]},
+       TemplateBox[{"\"Spain\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"Spain\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"Spain\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "Spain"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{10.863973094201718`, 26.120231668228215`}}]},
+       TemplateBox[{"\"Sweden\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"Sweden\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"Sweden\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "Sweden"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{11.369073066821228`, 26.408449827344153`}}]},
+       TemplateBox[{"\"Switzerland\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"Switzerland\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"Switzerland\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "Switzerland"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{8.880313178276534, 25.97665679134782}}]},
+       TemplateBox[{"\"Thailand\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"Thailand\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"Thailand\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "Thailand"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{9.052301867991801, 26.216722027286448`}}]},
+       TemplateBox[{"\"Turkey\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"Turkey\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"Turkey\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "Turkey"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{8.223339352567143, 25.1009725562363}}]},
+       TemplateBox[{"\"Ukraine\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"Ukraine\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"Ukraine\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "Ukraine"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{10.603725495498754`, 28.476749251968812`}}]},
+       TemplateBox[{"\"United Kingdom\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"UnitedKingdom\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"UnitedKingdom\\\"]\"", "\"country\""},
+         "Entity"]],
+      Annotation[#, 
+       Entity["Country", "UnitedKingdom"], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{11.05948121389841, 30.36538002766208}}]},
+       TemplateBox[{"\"United States\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Country\"", ",", "\"UnitedStates\""}], "]"}], 
+         "\"Entity[\\\"Country\\\", \\\"UnitedStates\\\"]\"", "\"country\""}, 
+        "Entity"]],
+      Annotation[#, 
+       Entity["Country", "UnitedStates"], "Tooltip"]& ]}}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{7.38919467718667, 24.66503262839567},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{
+     Charting`ScaledTicks[{Log, Exp}, {Log, Exp}, "Nice", WorkingPrecision -> 
+      15.954589770191003`, RotateLabel -> 0], 
+     Charting`ScaledFrameTicks[{Log, Exp}]}, {
+     Charting`ScaledTicks[{Log, Exp}, {Log, Exp}, "Nice", WorkingPrecision -> 
+      15.954589770191003`, RotateLabel -> 0], 
+     Charting`ScaledFrameTicks[{Log, Exp}]}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Exp[
+         Part[#, 1]], 
+        Exp[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Exp[
+         Part[#, 1]], 
+        Exp[
+         Part[#, 2]]}& )}},
+  PlotRange->{{7.38919467718667, 11.369073066821228`}, {24.66503262839567, 
+   30.36538002766208}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->FrontEndValueCache[{
+     Charting`ScaledTicks[{Log, Exp}, {Log, Exp}, "Nice", WorkingPrecision -> 
+      15.954589770191003`, RotateLabel -> 0], 
+     Charting`ScaledTicks[{Log, Exp}, {Log, Exp}, "Nice", WorkingPrecision -> 
+      15.954589770191003`, RotateLabel -> 0]}, {{{7.600902459542082, 
+       FormBox["2000", TraditionalForm], {0.01, 0.}}, {8.517193191416238, 
+       FormBox["5000", TraditionalForm], {0.01, 0.}}, {9.210340371976184, 
+       FormBox[
+        TemplateBox[{"\[Times]", "\"\[Times]\"", "1", 
+          
+          TemplateBox[{"10", "4"}, "Superscript", SyntaxForm -> 
+           SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+       0.}}, {9.903487552536127, 
+       FormBox[
+        TemplateBox[{"\[Times]", "\"\[Times]\"", "2", 
+          
+          TemplateBox[{"10", "4"}, "Superscript", SyntaxForm -> 
+           SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+       0.}}, {10.819778284410283`, 
+       FormBox[
+        TemplateBox[{"\[Times]", "\"\[Times]\"", "5", 
+          
+          TemplateBox[{"10", "4"}, "Superscript", SyntaxForm -> 
+           SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+       0.}}, {6.907755278982137, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      7.313220387090301, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      8.006367567650246, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      8.294049640102028, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      8.699514748210191, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      8.85366542803745, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      8.987196820661973, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      9.104979856318357, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      9.615805480084347, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      10.308952660644293`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      10.596634733096073`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      11.002099841204238`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      11.156250521031495`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      11.289781913656018`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      11.407564949312402`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      11.512925464970229`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      11.608235644774552`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      11.695247021764184`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      11.77528972943772, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      11.84939770159144, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      11.918390573078392`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}}, {{
+      24.635288842374557`, 
+       FormBox[
+        TemplateBox[{"\[Times]", "\"\[Times]\"", "5", 
+          
+          TemplateBox[{"10", "10"}, "Superscript", SyntaxForm -> 
+           SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+       0.}}, {25.328436022934504`, 
+       FormBox[
+        TemplateBox[{"\[Times]", "\"\[Times]\"", "1", 
+          
+          TemplateBox[{"10", "11"}, "Superscript", SyntaxForm -> 
+           SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+       0.}}, {26.937873935368604`, 
+       FormBox[
+        TemplateBox[{"\[Times]", "\"\[Times]\"", "5", 
+          
+          TemplateBox[{"10", "11"}, "Superscript", SyntaxForm -> 
+           SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+       0.}}, {27.631021115928547`, 
+       FormBox[
+        TemplateBox[{"\[Times]", "\"\[Times]\"", "1", 
+          
+          TemplateBox[{"10", "12"}, "Superscript", SyntaxForm -> 
+           SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+       0.}}, {29.240459028362647`, 
+       FormBox[
+        TemplateBox[{"\[Times]", "\"\[Times]\"", "5", 
+          
+          TemplateBox[{"10", "12"}, "Superscript", SyntaxForm -> 
+           SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+       0.}}, {29.933606208922594`, 
+       FormBox[
+        TemplateBox[{"\[Times]", "\"\[Times]\"", "1", 
+          
+          TemplateBox[{"10", "13"}, "Superscript", SyntaxForm -> 
+           SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+       0.}}, {22.33270374938051, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      22.515025306174465`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      22.669175986001726`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      22.80270737862625, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      22.920490414282632`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      23.025850929940457`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      23.7189981105004, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      24.124463218608568`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      24.412145291060348`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      24.81761039916851, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      24.97176107899577, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      25.10529247162029, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      25.223075507276675`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      26.021583203494448`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      26.42704831160261, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      26.714730384054395`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      27.12019549216256, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      27.274346171989816`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      27.40787756461434, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      27.525660600270722`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      28.324168296488494`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      28.729633404596658`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      29.017315477048438`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      29.4227805851566, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      29.576931264983862`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      29.710462657608385`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      29.82824569326477, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      30.626753389482538`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      31.032218497590705`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      31.319900570042485`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      31.543044121356694`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      31.72536567815065, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      31.879516357977906`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      32.01304775060243, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      32.13083078625881, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      32.23619130191664, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      32.33150148172096, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      32.41851285871059, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      32.498555566384134`, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      32.57266353853785, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      32.6416564100248, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}, {
+      32.70619493116237, 
+       FormBox[
+        TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 
+       0.}}}}]]], "Output",
+ CellChangeTimes->{
+  3.886365624779461*^9, {3.8863656920322037`*^9, 3.8863657162534213`*^9}, 
+   3.8863657716755056`*^9},
+ CellLabel->"Out[78]=",ExpressionUUID->"f843a817-8f85-412b-89f4-4c3684cc9b65"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "09", " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"Part", "[", 
+     RowBox[{"manyStationsGDPGovDebt", "[", 
+      RowBox[{"[", 
+       RowBox[{"i", ",", "1"}], "]"}], "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", 
+      RowBox[{"Length", "[", "manyStationsGDPGovDebt", "]"}]}], "}"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.8863657791000957`*^9, 3.886365865576829*^9}},
+ CellLabel->"In[81]:=",ExpressionUUID->"e092cf3a-1c33-4dfa-ad8d-e4823efb16ad"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"51812.1540373988`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"6796.84454227877`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"43258.176319834`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"10500.3956159637`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"61063.3164304238`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"48773.2811691347`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"39030.3603713482`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"46208.4294717472`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"1900.70680971528`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"31676.2020987349`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"39538.8792654412`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"8346.70237883571`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"52397.1167129558`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"3298.8298514292`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"12896.0886211622`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"10126.7217935297`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"20110.3161923744`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"5090.71502455292`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"27063.1939180299`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"52259.2973756664`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"86601.5564126289`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"7189.04183501668`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"8538.16905982745`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"3726.92714937055`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"40284.6384553276`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"], ",", 
+   TemplateBox[{"63543.577788724`", 
+     RowBox[{
+       FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+     RowBox[{
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+       RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+     "US dollars per person year", 
+     FractionBox["\"USDollars\"", 
+      RowBox[{"\"People\"", " ", "\"Years\""}]]},
+    "QuantityPrefixUnit"]}], "}"}]], "Output",
+ CellChangeTimes->{{3.886365808385373*^9, 3.8863658193817744`*^9}, 
+   3.8863658658174925`*^9},
+ CellLabel->"Out[81]=",ExpressionUUID->"5d14608d-8ac8-4dce-b3ac-0b3c2e80b317"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Mean", "[", "%81", "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[82]:=",ExpressionUUID->"cd8074b5-c96f-4a36-aefb-37231a532cb9"],
+
+Cell[BoxData[
+ TemplateBox[{"30078.139950055844`", 
+   RowBox[{
+     FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+   RowBox[{
+     RowBox[{"\"per \"", "\[InvisibleSpace]", "\"person\""}], 
+     RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}]}], 
+   "US dollars per person year", 
+   FractionBox["\"USDollars\"", 
+    RowBox[{"\"People\"", " ", "\"Years\""}]]},
+  "QuantityPrefixUnit"]], "Output",
+ CellChangeTimes->{3.886365876286342*^9},
+ CellLabel->"Out[82]=",ExpressionUUID->"aff62f80-c887-4710-a5c3-461949fc4f5b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "10", " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"Correlation", "[", 
+   RowBox[{
+    RowBox[{"manyStationsGDPGovDebt", "[", 
+     RowBox[{"[", 
+      RowBox[{"All", ",", "1"}], "]"}], "]"}], ",", 
+    RowBox[{"manyStationsGDPGovDebt", "[", 
+     RowBox[{"[", 
+      RowBox[{"All", ",", "2"}], "]"}], "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8863658820525055`*^9, 3.886365939961275*^9}},
+ CellLabel->"In[83]:=",ExpressionUUID->"d734c5ef-89f1-41d6-80be-3ca60e2816b9"],
+
+Cell[BoxData["0.24747502400537544`"], "Output",
+ CellChangeTimes->{3.886365940236928*^9},
+ CellLabel->"Out[83]=",ExpressionUUID->"86aeff81-d609-4402-80ed-40252c6c8b5e"]
+}, Open  ]]
+},
+WindowSize->{718.5, 735.},
+WindowMargins->{{Automatic, -5.25}, {Automatic, 0}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (2022\:5e746\:670816\
+\:65e5)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"ae4ea517-988d-4538-8b26-c5e2c57438a5"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1434, 28, 60, "Input",ExpressionUUID->"b41770c4-c06d-4862-a2e8-00da246683fe"],
+Cell[2017, 52, 171, 3, 32, "Output",ExpressionUUID->"5d70040a-3816-4dd2-a24d-795548787ef8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2225, 60, 402, 9, 62, "Input",ExpressionUUID->"c3fd55f9-1f17-4602-bfe7-60694f72e010"],
+Cell[2630, 71, 257, 4, 32, "Output",ExpressionUUID->"6e0315c6-5c06-441c-9b35-b28d12f02814"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2924, 80, 547, 14, 97, "Input",ExpressionUUID->"2c4b72e5-7530-4f7f-a0fa-3e1ca2d7978a"],
+Cell[3474, 96, 284, 6, 32, "Output",ExpressionUUID->"c5a87bba-3172-41b8-8334-eff87429853d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3795, 107, 825, 20, 97, "Input",ExpressionUUID->"f2af7e5e-b7c7-447e-bf24-0e5fa32ae4ae"],
+Cell[4623, 129, 5717, 134, 134, "Output",ExpressionUUID->"13f03016-e628-44d8-8db4-2b031fb11aa3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10377, 268, 497, 11, 83, "Input",ExpressionUUID->"0ed86841-4c90-4c2d-b853-6e281eb4e99c"],
+Cell[10877, 281, 5764, 135, 134, "Output",ExpressionUUID->"eb953e83-4718-4b9c-87e7-721a19f2ab09"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16678, 421, 775, 17, 137, "Input",ExpressionUUID->"6b2e63aa-0cf1-4ba0-9064-0f78715d3227"],
+Cell[17456, 440, 19947, 517, 873, "Output",ExpressionUUID->"4bfe6c48-2f03-44cb-8fd1-9db98f079ba0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37440, 962, 306, 5, 62, "Input",ExpressionUUID->"62cdb138-9f3a-49b8-947d-0354cc5bf140"],
+Cell[37749, 969, 195, 4, 32, "Output",ExpressionUUID->"3f6c95fe-e0d9-4576-bdb3-0fbe9bcb21af"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37981, 978, 734, 18, 118, "Input",ExpressionUUID->"c4c3922b-5aa8-406c-a911-c47f85716e08"],
+Cell[38718, 998, 23108, 564, 233, "Output",ExpressionUUID->"f843a817-8f85-412b-89f4-4c3684cc9b65"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[61863, 1567, 569, 14, 62, "Input",ExpressionUUID->"e092cf3a-1c33-4dfa-ad8d-e4823efb16ad"],
+Cell[62435, 1583, 11015, 265, 411, "Output",ExpressionUUID->"5d14608d-8ac8-4dce-b3ac-0b3c2e80b317"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[73487, 1853, 159, 3, 43, "Input",ExpressionUUID->"cd8074b5-c96f-4a36-aefb-37231a532cb9"],
+Cell[73649, 1858, 536, 12, 43, "Output",ExpressionUUID->"aff62f80-c887-4710-a5c3-461949fc4f5b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[74222, 1875, 524, 12, 62, "Input",ExpressionUUID->"d734c5ef-89f1-41d6-80be-3ca60e2816b9"],
+Cell[74749, 1889, 168, 2, 55, "Output",ExpressionUUID->"86aeff81-d609-4402-80ed-40252c6c8b5e"]
+}, Open  ]]
+}
+]
+*)
+
